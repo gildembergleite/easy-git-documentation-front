@@ -76,7 +76,13 @@ export const Typography = {
     className,
     ...rest
   }: HTMLAttributes<HTMLParagraphElement>) => (
-    <code className={cn('bg-background p-1', className)} {...rest}>
+    <code
+      className={cn(
+        'relative rounded bg-background px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
+        className,
+      )}
+      {...rest}
+    >
       {children}
     </code>
   ),

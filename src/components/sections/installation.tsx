@@ -1,4 +1,5 @@
 import { Typography } from '@/components/typography'
+import Link from 'next/link'
 
 export function InstallationSection() {
   return (
@@ -32,7 +33,14 @@ export function InstallationSection() {
       <ol>
         <li>
           Baixe e execute o instalador do Rust a partir de{' '}
-          <a href="https://www.rust-lang.org/tools/install">rust-lang.org</a>.
+          <Link
+            href="https://www.rust-lang.org/tools/install"
+            target="_blank"
+            className="underline"
+          >
+            rust-lang.org
+          </Link>
+          .
         </li>
         <li>Siga as instruções na tela para completar a instalação.</li>
         <li>
