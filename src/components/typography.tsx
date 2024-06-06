@@ -71,35 +71,27 @@ export const Typography = {
       {children}
     </p>
   ),
-  Lead: ({
+  Code: ({
     children,
     className,
     ...rest
   }: HTMLAttributes<HTMLParagraphElement>) => (
-    <p className={cn('text-xl text-muted-foreground', className)} {...rest}>
+    <code className={cn('bg-background p-1', className)} {...rest}>
       {children}
-    </p>
+    </code>
   ),
-  Large: ({ children, className, ...rest }: HTMLAttributes<HTMLDivElement>) => (
-    <div className={cn('text-lg font-semibold', className)} {...rest}>
-      {children}
+  CodeBlock: ({
+    children,
+    className,
+    ...rest
+  }: HTMLAttributes<HTMLParagraphElement>) => (
+    <div className="relative">
+      <pre className="pt-10 pb-6 bg-background rounded-md">
+        <code className={cn('p-6', className)} {...rest}>
+          {children}
+        </code>
+      </pre>
+      <span className="absolute top-4 left-4 text-xs">bash</span>
     </div>
-  ),
-  Small: ({ children, className, ...rest }: HTMLAttributes<HTMLElement>) => (
-    <small
-      className={cn('text-sm font-medium leading-none', className)}
-      {...rest}
-    >
-      {children}
-    </small>
-  ),
-  Muted: ({
-    children,
-    className,
-    ...rest
-  }: HTMLAttributes<HTMLParagraphElement>) => (
-    <p className={cn('text-sm text-muted-foreground', className)} {...rest}>
-      {children}
-    </p>
   ),
 }
